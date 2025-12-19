@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <title>FeedChain – Decentralized, real-time food redistribution</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="index.css" rel="stylesheet">
+<body>
+  <div class="page">
+    <header>
+      <div class="nav-inner">
+        <div class="nav-left">
+          <div class="logo">
+            <div class="logo-mark">
+              <div class="logo-mark-inner"></div>
+            </div>
+            <div class="logo-text">
+              <div class="logo-title">
+                <span>FeedChain</span>
+                <span class="logo-title-suffix">PUBLIC GOODS</span>
+              </div>
+              <div class="logo-tagline">Decentralized, real-time food redistribution</div>
+            </div>
+          </div>
+          <nav class="nav-links">
+            <button class="nav-link nav-link--active" data-nav="home">
+              <span class="dot"></span>
+              Home
+            </button>
+            <button class="nav-link" data-nav="post">
+              <span class="dot"></span>
+              Post Food
+            </button>
+            <button class="nav-link" data-nav="available">
+              <span class="dot"></span>
+              Find Food
+            </button>
+            <button class="nav-link" data-nav="transparency">
+              <span class="dot"></span>
+              Transparency
+            </button>
+            <button class="nav-link" data-nav="about">
+              <span class="dot"></span>
+              About
+            </button>
+          </nav>
+        </div>
+        <div class="nav-right">
+          <div class="wallet-indicator" id="wallet-indicator">
+            <span class="wallet-dot"></span>
+            <span class="wallet-indicator-text" id="wallet-indicator-text">Not connected</span>
+          </div>
+          <button class="btn btn-secondary btn-sm" id="connect-wallet">
+            <span>Connect Wallet</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Home -->
+      <section class="section section--active" data-section="home">
+        <div class="hero">
+          <div class="hero-left">
+            <div class="hero-kicker">
+              <div class="hero-kicker-badge">⛓</div>
+              <span>Public goods rail for surplus food</span>
+            </div>
+            <h1 class="hero-title">
+              <span>FeedChain</span><br>
+              for human-centered food rescue.
+            </h1>
+            <p class="hero-subtitle">
+              Connecting surplus food from events to people who need it — transparently, instantly, and without speculation.
+            </p>
+            <p class="hero-subtext">
+              Event hosts post verified surplus. Volunteers and NGOs claim and distribute. Every handoff is recorded on an open, privacy-respecting ledger.
+            </p>
+            <div class="hero-actions">
+              <button class="btn btn-primary" data-nav-target="post">
+                Post Food
+              </button>
+              <button class="btn btn-outline" data-nav-target="available">
+                Find Food
+              </button>
+              <button class="btn btn-ghost btn-sm" data-nav-target="transparency">
+                View Transparency
+              </button>
+            </div>
+            <div class="hero-secondary-actions">
+              <span class="chip">
+                <span class="chip-dot"></span>
+                <span>Real-time redistribution</span>
+              </span>
+              <span class="chip">
+                <span class="chip-dot"></span>
+                <span>No middleman, no tokens</span>
+              </span>
+            </div>
+            <div class="hero-metric-row">
+              <div class="hero-metric">
+                <div class="hero-metric-label">Live meals saved (demo)</div>
+                <div class="hero-metric-value">12,480 <span>meals</span></div>
+              </div>
+              <div class="hero-metric">
+                <div class="hero-metric-label">Events helped</div>
+                <div class="hero-metric-value">326 <span>hosts</span></div>
+              </div>
+              <div class="hero-metric">
+                <div class="hero-metric-label">NGOs on-boarded</div>
+                <div class="hero-metric-value">58 <span>partners</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-right">
+            <div class="hero-right-card">
+              <div class="hero-right-header">
+                <div>
+                  <div class="hero-right-title">
+                    <span class="icon">◎</span>
+                    Real-time Food Flow
+                  </div>
+                  <div class="hero-right-subtext">
+                    A single shared rail from event to plate — visible to hosts, volunteers, and partners.
+                  </div>
+                </div>
+                <span class="badge badge-soft">
+                  <span class="badge-dot"></span>
+                  Live demo state
+                </span>
+              </div>
+
+              <div class="hero-flow">
+                <div class="hero-node">
+                  <div class="hero-node-header">
+                    <div>
+                      <div class="hero-node-title">Event Host</div>
+                      <div class="hero-node-role">Posts surplus trays</div>
+                    </div>
+                    <span class="badge badge--available">
+                      <span class="badge-dot"></span>
+                      Posted
+                    </span>
+                  </div>
+                  <div class="hero-node-meta">
+                    <span class="pill pill-soft">40 meals</span>
+                    <span>Downtown Hall</span>
+                  </div>
+                  <div class="hero-node-meta">
+                    <span class="pill pill-warn">2h 10m left</span>
+                  </div>
+                </div>
+                <div class="hero-node">
+                  <div class="hero-node-header">
+                    <div>
+                      <div class="hero-node-title">Volunteer</div>
+                      <div class="hero-node-role">Claims nearby food</div>
+                    </div>
+                    <span class="badge badge--claimed">
+                      <span class="badge-dot"></span>
+                      Secured
+                    </span>
+                  </div>
+                  <div class="hero-node-meta">
+                    <span class="pill">0.8 km away</span>
+                    <span class="text-mono">0xA2…9b1</span>
+                  </div>
+                  <div class="hero-node-meta">
+                    <span>ETA 14 min</span>
+                  </div>
+                </div>
+                <div class="hero-node">
+                  <div class="hero-node-header">
+                    <div>
+                      <div class="hero-node-title">Community</div>
+                      <div class="hero-node-role">NGO distributes</div>
+                    </div>
+                    <span class="badge badge--distributed">
+                      <span class="badge-dot"></span>
+                      Delivered
+                    </span>
+                  </div>
+                  <div class="hero-node-meta">
+                    <span class="pill">Shelter A & B</span>
+                  </div>
+                  <div class="hero-node-meta">
+                    <span class="hero-node-status">Proof-of-meals shared</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="hero-micro">
+                <span>Ledger update latency: <strong>&lt; 10s</strong></span>
+                <span>Host visibility window: <strong>2 hours</strong></span>
+              </div>
+
+              <div class="live-feed">
+                <div class="live-feed-row">
+                  <div class="live-feed-label">
+                    <span class="live-feed-dot"></span>
+                    <span>Conference posted 60 surplus meals</span>
+                  </div>
+                  <span class="live-feed-pill">2.3 km • 3 min ago</span>
+                </div>
+                <div class="live-feed-row">
+                  <div class="live-feed-label">
+                    <span class="live-feed-dot" style="background:#38bdf8; box-shadow:0 0 10px rgba(56,189,248,0.9);"></span>
+                    <span>Volunteer 0xB3…f7c claimed & en route</span>
+                  </div>
+                  <span class="live-feed-pill">ETA 9 min</span>
+                </div>
+                <div class="live-feed-row">
+                  <div class="live-feed-label">
+                    <span class="live-feed-dot" style="background:#818cf8; box-shadow:0 0 10px rgba(129,140,248,0.9);"></span>
+                    <span>NGO SafePlates marked as distributed</span>
+                  </div>
+                  <span class="live-feed-pill">Proof-of-distribution</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- How it works -->
+        <div class="section-header" style="margin-top:2rem;">
+          <div class="section-kicker">How it works</div>
+          <h2 class="section-title">Four steps from surplus to shared meals.</h2>
+        </div>
+        <div class="grid grid-4">
+          <div class="how-card">
+            <div class="how-card-inner">
+              <div class="how-step">
+                <div class="how-step-number">1</div>
+                <span>Event host</span>
+              </div>
+              <div class="how-title">Post surplus food</div>
+              <div class="how-text">
+                Hosts snapshot leftover food — quantity, location, and expiry — in under 30 seconds.
+              </div>
+            </div>
+          </div>
+          <div class="how-card">
+            <div class="how-card-inner">
+              <div class="how-step">
+                <div class="how-step-number">2</div>
+                <span>FeedChain registry</span>
+              </div>
+              <div class="how-title">Food registered transparently</div>
+              <div class="how-text">
+                Each listing is written to an open ledger, creating a tamper-proof trail for partners and funders.
+              </div>
+            </div>
+          </div>
+          <div class="how-card">
+            <div class="how-card-inner">
+              <div class="how-step">
+                <div class="how-step-number">3</div>
+                <span>Volunteer / NGO</span>
+              </div>
+              <div class="how-title">Volunteer claims securely</div>
+              <div class="how-text">
+                Verified wallets claim nearby food. Double-claims and ghost pickups are prevented by design.
+              </div>
+            </div>
+          </div>
+          <div class="how-card">
+            <div class="how-card-inner">
+              <div class="how-step">
+                <div class="how-step-number">4</div>
+                <span>Community</span>
+              </div>
+              <div class="how-title">Food distributed responsibly</div>
+              <div class="how-text">
+                NGOs confirm distribution, closing the loop with public, auditable proof-of-meals — not speculation.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Why FeedChain -->
+        <div class="section-header" style="margin-top:2.1rem;">
+          <div class="section-kicker">Why FeedChain</div>
+          <h2 class="section-title">Built for <span class="accent">trust</span>, not hype.</h2>
+        </div>
+        <div class="grid grid-3">
+          <div class="why-card">
+            <div class="why-card-inner">
+              <div class="why-icon">🔍</div>
+              <div class="why-title">Radical transparency</div>
+              <div class="why-text">
+                Every step — from posting food to final distribution — is recorded on a shared, append-only ledger that anyone can verify.
+              </div>
+            </div>
+          </div>
+          <div class="why-card">
+            <div class="why-card-inner">
+              <div class="why-icon">🤝</div>
+              <div class="why-title">Trust without middlemen</div>
+              <div class="why-text">
+                Hosts, volunteers, and NGOs coordinate directly. No opaque intermediaries, no paywalls, no token speculation.
+              </div>
+            </div>
+          </div>
+          <div class="why-card">
+            <div class="why-card-inner">
+              <div class="why-icon">🌍</div>
+              <div class="why-title">Impact that scales</div>
+              <div class="why-text">
+                Open data makes it easier for cities, funders, and public goods ecosystems to quantify and support real-world impact.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Impact stats -->
+        <div class="section-header" style="margin-top:2.1rem;">
+          <div class="section-kicker">Impact (demo)</div>
+          <h2 class="section-title">A global feed of local redistribution.</h2>
+          <p class="section-subtitle">
+            Placeholder stats to show how impact can be surfaced for hackathon judges, partners, and public goods ecosystems.
+          </p>
+        </div>
+        <div class="stats-row">
+          <div class="stat-card">
+            <div class="stat-label">
+              Meals saved
+            </div>
+            <div class="stat-value">124,580</div>
+            <div class="stat-subtext">
+              Across pilot events in 4 cities over 6 months.
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">
+              Events helped
+            </div>
+            <div class="stat-value">3,246</div>
+            <div class="stat-subtext">
+              Conferences, weddings, and community gatherings using FeedChain instead of landfills.
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">
+              NGOs onboarded
+            </div>
+            <div class="stat-value">214</div>
+            <div class="stat-subtext">
+              Grassroots organizations with live access to surplus food streams, not just occasional donations.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Post Food -->
+      <section class="section" data-section="post">
+        <div class="section-header">
+          <div class="section-kicker">Post food</div>
+          <h2 class="section-title">Turn leftovers into <span class="accent">immediate meals</span>.</h2>
+          <p class="section-subtitle">
+            Share surplus food from your event in under a minute. Nearby volunteers and NGOs see it instantly.
+          </p>
+        </div>
+
+        <div class="card form-card">
+          <div class="card-inner">
+            <form id="post-form">
+              <div class="form-grid">
+                <div class="form-group">
+                  <label for="food-type">Food type</label>
+                  <input id="food-type" name="food-type" class="input" placeholder="e.g. Vegetarian buffet trays, sandwiches, pastries" required>
+                </div>
+                <div class="form-group">
+                  <label for="quantity">Quantity / portions</label>
+                  <input id="quantity" name="quantity" class="input" placeholder="e.g. ~40 portions, 3 trays, 2 boxes" required>
+                </div>
+                <div class="form-group">
+                  <label for="location">Location</label>
+                  <input id="location" name="location" class="input" placeholder="e.g. City Conference Center, Hall B" required>
+                </div>
+                <div class="form-group">
+                  <label for="expiry">Safe to serve until</label>
+                  <input id="expiry" name="expiry" class="input" type="datetime-local" required>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary">
+                Post Food
+              </button>
+            </form>
+            <div class="form-note">
+              <div class="form-note-icon">i</div>
+              <div>
+                Food details are shared in real-time with nearby volunteers and NGOs.
+                Claim and distribution records are tamper-proof, leaving an auditable trail of every meal.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Available Food / Claim -->
+      <section class="section" data-section="available">
+        <div class="section-header">
+          <div class="section-kicker">Find food</div>
+          <h2 class="section-title">Claim surplus food <span class="accent">in real time</span>.</h2>
+          <p class="section-subtitle">
+            Browse live surplus from nearby events. Claim with your wallet, coordinate pickup, and help communities eat — not waste.
+          </p>
+        </div>
+
+        <div class="two-column">
+          <div>
+            <div class="food-filters">
+              <div class="food-filters-left">
+                <span class="chip">
+                  <span class="chip-dot"></span>
+                  <span>Looking near: City Center • &lt; 5 km</span>
+                </span>
+                <span class="chip">
+                  <span class="chip-dot" style="background:#22c55e;"></span>
+                  <span>Time-sensitive first</span>
+                </span>
+              </div>
+              <div class="food-filters-right">
+                <span class="pill">
+                  <span style="width:6px;height:6px;border-radius:999px;background:#22c55e;"></span>
+                  Showing live surplus
+                </span>
+              </div>
+            </div>
+
+            <div class="food-list" id="food-list">
+              <!-- Food cards injected by JS -->
+            </div>
+          </div>
+
+          <div class="map-card">
+            <div class="map-header">
+              <div class="map-title">
+                <span class="icon">🗺</span>
+                <span>Location heatmap (placeholder)</span>
+              </div>
+              <div class="map-legend">
+                <span class="map-legend-item">
+                  <span class="map-marker-dot"></span>
+                  <span>Available</span>
+                </span>
+                <span class="map-legend-item">
+                  <span class="map-marker-dot map-marker-dot--claimed"></span>
+                  <span>Claimed</span>
+                </span>
+              </div>
+            </div>
+            <div class="map-body">
+              <div class="map-pin" style="top:18%;left:22%;">A</div>
+              <div class="map-pin map-pin--claimed" style="top:35%;left:68%;">B</div>
+              <div class="map-pin" style="top:62%;left:38%;">C</div>
+              <div class="map-pin" style="top:70%;left:78%;">D</div>
+              <div class="map-overlay-text">
+                <span>Locations are slightly blurred until a claim is confirmed, protecting hosts and communities.</span>
+                <span><strong>3</strong> active pickups • <strong>6</strong> awaiting claims</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Transparency -->
+      <section class="section" data-section="transparency">
+        <div class="section-header">
+          <div class="section-kicker">Transparency</div>
+          <h2 class="section-title">A public ledger of <span class="accent">meals, not tokens</span>.</h2>
+          <p class="section-subtitle">
+            Every posting, claim, and distribution update is written to an open, human-readable ledger.
+            Think of it as an accountability layer for food rescue.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-inner">
+            <div class="ledger-badge">
+              <span class="dot"></span>
+              Publicly verifiable record
+            </div>
+            <div class="ledger-meta">
+              <span>Demo chain snapshot: <strong>&lt; 10s</strong> finality per update</span>
+              <span>Zero speculation, zero fees for NGOs and volunteers.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card ledger-table-wrapper">
+          <div class="card-inner">
+            <div class="ledger-table-inner">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Time</th>
+                    <th>Food</th>
+                    <th>Location</th>
+                    <th>Posted by</th>
+                    <th>Claimed by</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody id="ledger-body">
+                  <!-- Rows injected by JS -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About / Public Goods -->
+      <section class="section" data-section="about">
+        <div class="section-header">
+          <div class="section-kicker">Public goods</div>
+          <h2 class="section-title">Why a <span class="accent">Web3 rail</span> for food redistribution?</h2>
+          <p class="section-subtitle">
+            FeedChain uses Web3 where it matters: verifiable coordination, open data, and shared ownership — not speculation.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <div>
+            <div class="about-kicker">Why Web3?</div>
+            <div class="about-text">
+              <p>
+                Food rescue already happens in every city — but coordination is fragile. Spreadsheets, group chats, and siloed apps
+                make it hard to know what was posted, who picked it up, and whether it reached people on time.
+              </p>
+              <p>
+                Web3 gives us a neutral coordination layer. Every event host, volunteer, and NGO writes to the same shared ledger,
+                creating a live map of surplus food and its journey without relying on a single company or database.
+              </p>
+              <div class="impact-chip-row">
+                <span class="chip">
+                  <span class="chip-dot"></span>
+                  Transparent, append-only records
+                </span>
+                <span class="chip">
+                  <span class="chip-dot"></span>
+                  Wallet-based accountability
+                </span>
+                <span class="chip">
+                  <span class="chip-dot"></span>
+                  Open APIs for cities & funders
+                </span>
+              </div>
+          </div>
+          </div>
+          <div class="about-grid-right">
+            <div class="why-card">
+              <div class="why-card-inner">
+                <div class="why-icon">🔗</div>
+                <div class="why-title">Transparency &amp; trust</div>
+                <div class="why-text">
+                  Each claim and distribution is signed by a wallet and stored on-chain.
+                  Partners can audit impact without trusting screenshots or reports.
+                </div>
+              </div>
+            </div>
+            <div class="why-card">
+              <div class="why-card-inner">
+                <div class="why-icon">📊</div>
+                <div class="why-title">Accountability without friction</div>
+                <div class="why-text">
+                  Lightweight attestations — not heavy paperwork — show which NGOs consistently follow through,
+                  helping route funding and surplus to where it’s most effective.
+                </div>
+              </div>
+            </div>
+            <div class="why-card">
+              <div class="why-card-inner">
+                <div class="why-icon">🌱</div>
+                <div class="why-title">Public goods impact</div>
+                <div class="why-text">
+                  <strong>Food waste reduction.</strong> <br>
+                  <strong>NGO empowerment.</strong> <br>
+                  <strong>Sustainable communities.</strong> <br>
+                  FeedChain is infrastructure any city or network can plug into, extend, and govern together.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Toast -->
+    <div class="toast" id="toast">
+      <div class="toast-icon" id="toast-icon">✓</div>
+      <div>
+        <div class="toast-content-title" id="toast-title">Success</div>
+        <div class="toast-content-message" id="toast-message">Action completed.</div>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div>
+          <div class="footer-title">Public Goods Infrastructure</div>
+          <p class="footer-tagline">
+            FeedChain is a neutral rail for moving surplus food from events to people who need it — verified in public, owned by communities.
+          </p>
+        </div>
+        <div class="footer-links">
+          <a href="#" class="footer-link">GitHub (coming soon) ↗</a>
+          <span class="footer-pill">Built for hackathons, cities, and public goods ecosystems</span>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <script src="index.js"></script>
+</body>
+</html>
